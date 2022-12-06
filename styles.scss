@@ -1,0 +1,77 @@
+@mixin mobile-padding {
+  padding: 0 1.6rem;
+}
+
+$almost-white: hsl(0, 0%, 98%);
+$medium-gray: hsl(0, 0%, 41%);
+$almost-black: hsl(0, 0%, 8%);
+
+
+
+*, *::before, *::after {
+    box-sizing: border-box;
+    font-size: 10px;
+    margin: 0;
+    padding: 0;
+    font-family: "Epilogue", sans-serif;
+  }
+  
+  .wrapper {
+    text-align: center;
+    padding: 2.4rem 0;
+  }
+  
+  .navbar {
+    display: flex;
+    justify-content: space-between;
+    margin: 0 0 2.2rem 0;
+    @include mobile-padding;
+  }
+
+  .navbar__button {
+    background: none;
+    border: none;
+
+  }
+  
+  .main__image {
+    height: auto;
+    width: 100vw;
+    padding: 0;
+  }
+  
+  .main__heading {
+    font-size: 3rem;
+  }
+
+  .main__picturediv {
+    margin: 0 0 4.7rem 0;
+  }
+
+  .main__heading {
+    font-size: 3.55rem;
+    margin: 0 0 1.9rem 0;
+  }
+  
+  .main__paragraph {
+    @include mobile-padding;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 2.6rem;
+    color: $medium-gray;
+    margin: 0 0 2.4rem 0;
+  }
+
+  .main__call-to-action {
+    background-color: black;
+    border: none;
+    color: white;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 1.6rem 2rem;
+
+    &:hover {
+      cursor: pointer;
+    }
+
+  }
