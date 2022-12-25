@@ -32,6 +32,12 @@ closeButton.addEventListener("click", () => {
     featuresListItems.forEach(item => {
         item.classList.remove("featureslist__item--show")
     })
+    companyList.classList.remove("list--show");
+    companyListItems.forEach(item => {
+        item.classList.remove("companylist__item--show")
+    })
+    featuresArrow.classList.remove("arrow--expand");
+    companyArrow.classList.remove("arrow--expand");
 })
 
 // FEATURES LIST OPEN
@@ -49,5 +55,5 @@ company.addEventListener("click", () => {
     companyListItems.forEach(item => {
         item.classList.toggle("companylist__item--show")
     })
-    featuresArrow.classList.toggle("arrow--expand")
+    companyArrow.classList.toggle("arrow--expand")
 })

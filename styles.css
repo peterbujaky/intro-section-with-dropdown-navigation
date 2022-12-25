@@ -1,4 +1,6 @@
-*, *::before, *::after {
+*,
+*::before,
+*::after {
   box-sizing: border-box;
   font-size: 10px;
   margin: 0;
@@ -8,13 +10,14 @@
 
 body {
   overflow-x: hidden;
+  background-color: hsl(0deg, 0%, 98%);
 }
 
 .wrapper {
   text-align: center;
-  overflow-x: hidden;
 }
 
+/* TRANSPARENT LAYER ON AND OFF */
 .layer {
   width: 100vw;
   height: 100vh;
@@ -58,7 +61,7 @@ body {
 }
 
 .navbar__menu {
-  background-color: white;
+  background-color: hsl(0deg, 0%, 98%);
   display: flex;
   flex-direction: column;
   font-size: 1.6rem;
@@ -70,14 +73,11 @@ body {
   opacity: 0;
   transition: all 0.3s ease-in-out;
   visibility: hidden;
-  width: calc(100% - 13.5rem);
+  width: 64%;
   z-index: 3;
 }
 .navbar__menu .menu__closebuttondiv {
   margin: 0 0 3.5rem 0;
-}
-.navbar__menu .menu__closebutton:hover {
-  transition: 0.1s;
 }
 .navbar__menu .menu__closebutton--rotate {
   transform: rotate(180deg);
@@ -89,22 +89,35 @@ body {
   margin: 0 0 3rem 0;
   text-decoration: none;
 }
-.navbar__menu a .arrow {
-  margin: 0 0 0 0.8rem;
+.navbar__menu a:hover {
+  color: hsl(0deg, 0%, 8%);
 }
 .navbar__menu ul {
   list-style: none;
-  text-align: left;
   flex-direction: column;
+  text-align: left;
   width: max-content;
 }
 .navbar__menu ul li {
   font-size: 1.6rem;
   font-weight: 600;
   color: hsl(0deg, 0%, 41%);
+  transition: all 0.3s;
+}
+.navbar__menu ul li:hover {
+  color: hsl(0deg, 0%, 8%);
+  transform: scale(1.05);
+  transition: transform 0.1s;
 }
 .navbar__menu button {
   font-size: 1.46rem;
+}
+.navbar__menu button:hover {
+  color: hsl(0deg, 0%, 8%);
+}
+
+a:nth-of-type(4) {
+  margin-bottom: 2rem;
 }
 
 .navbar__menu--show {
@@ -119,15 +132,17 @@ body {
   margin: 0 0 2.5rem 0;
 }
 
+/* FEATURES LIST */
 .featureslist {
   list-style: none;
   text-align: left;
   display: flex;
-  gap: 1.5rem;
+  gap: 2rem;
   max-height: 0;
   margin: 0;
   opacity: 0;
   flex-direction: column;
+  /* FEATURES LIST ITEM ANIMATIONS ON */
 }
 .featureslist .featureslist__item {
   align-items: center;
@@ -163,25 +178,49 @@ body {
   transition-delay: 0.2s;
 }
 
+/*FEATURES LIST ITEM ANIMATIONS OFF */
+.featureslist__item--show:nth-child(1) {
+  transition-delay: 0s;
+}
+
+.featureslist__item--show:nth-child(2) {
+  transition-delay: 0.05s;
+}
+
+.featureslist__item--show:nth-child(3) {
+  transition-delay: 0.1s;
+}
+
+.featureslist__item--show:nth-child(3) {
+  transition-delay: 0.15s;
+}
+
+.featureslist__item--show:nth-child(4) {
+  transition-delay: 0.2s;
+}
+
+/*COMPANY LIST */
 .companylist {
   display: flex;
+  max-height: 0;
   gap: 2.5rem;
 }
 
 .companylist__item {
   margin: 0 0 0 3rem;
-  max-height: 0;
-  margin-left: 300px;
+  max-height: fit-content;
+  margin-left: 500px;
   transform: translateX(100%);
 }
 
 .companylist__item--show {
   display: flex;
-  transform: translateX(-300px);
+  transform: translateX(-470px);
   transition: all 0.3s ease-in-out;
   opacity: 1;
 }
 
+/* COMPANY LIST ITEM ANIMATIONS */
 .companylist__item--show:nth-child(1) {
   transition-delay: 0s;
 }
@@ -202,6 +241,7 @@ body {
   transition-delay: 0.2s;
 }
 
+/*  MENU BUTTONS */
 .menu__closebuttondiv {
   display: flex;
   justify-content: end;
@@ -213,30 +253,45 @@ body {
 
 .menu__loginbutton {
   background: none;
-  border: none;
   margin: 1rem 0 1.7rem 0;
+  border: none;
 }
 
 .menu__registerbutton {
-  background: white;
+  background: hsl(0deg, 0%, 98%);
   padding-top: 12px;
   padding-bottom: 12px;
   border-radius: 1.5rem;
+  cursor: pointer;
+}
+.menu__registerbutton:hover {
+  transform: translateY(-0.1rem);
+}
+.menu__registerbutton:active {
+  transform: translateY(0.1rem);
 }
 
+/* LIST TOGGLE */
 .list--show {
   display: flex;
   opacity: 1;
   max-height: 100rem;
-  margin: 0 0 3.3rem 0;
+  margin: 2.7rem 0 0 0;
+}
+
+/* ARROW ICON TOGGLE */
+.arrow {
+  margin: 0 0 0 0.8rem;
+  transform: rotate(0deg);
+  transition: all 0.3s;
 }
 
 .arrow--expand {
   transform: rotate(-180deg);
-  transition: all 0.3s;
+  transition: all 0.8s;
 }
 
-/* Main Section */
+/* MAIN SECTION */
 .main__image {
   height: auto;
   width: 100vw;
@@ -267,16 +322,18 @@ body {
 
 .main__call-to-action {
   background-color: black;
-  border: none;
+  border: 1px solid;
   border-radius: 1.6rem;
-  color: white;
+  color: hsl(0deg, 0%, 98%);
   font-size: 1.6rem;
   font-weight: 600;
   padding: 1.6rem 2.2rem;
   margin: 0 0 4.2rem 0;
 }
 .main__call-to-action:hover {
+  background-color: hsl(0deg, 0%, 98%);
   cursor: pointer;
+  color: black;
 }
 
 .footer {
@@ -288,6 +345,233 @@ body {
 .footer__image {
   align-self: center;
   transform: scale(0.7);
+}
+
+/* MEDIA QUERIES */
+/* NAVBAR SIEBAR  => NAVBAR */
+@media (min-width: 800px) {
+  .navbar {
+    justify-content: space-evenly;
+    padding: 1rem 0 0 0;
+  }
+  .navbar .navbar__brand {
+    margin: 2.2rem 0 0 -4.1rem;
+  }
+  .navbar__menu > * {
+    font-size: 1.43rem;
+  }
+  .menu__item {
+    position: relative;
+  }
+  .navbar__menu {
+    align-items: baseline;
+    width: 80%;
+    height: 10%;
+    flex-direction: row;
+    justify-content: space-evenly;
+    opacity: 1;
+    padding: 0;
+    pointer-events: all;
+    position: relative;
+    right: 0;
+    visibility: visible;
+  }
+  .navbar__menu a {
+    margin: 2.4rem 3.7rem 0 0;
+  }
+  .navbar__menu ul {
+    background-color: white;
+    box-shadow: 0 1rem 20px 2px rgba(0, 0, 0, 0.12);
+    border-radius: 1rem;
+    position: absolute;
+    margin: 2rem 0 0 0;
+    right: 0;
+  }
+  .navbar__menu ul li {
+    font-size: 1.43rem;
+  }
+  .menu__loginbutton {
+    border-top: 2px solid transparent;
+    border-right: 2px solid transparent;
+    border-bottom: 2px solid transparent;
+    border-left: 2px solid transparent;
+    transition: border-bottom 0.2s linear, border-right 0.2s linear 0.05s, border-top 0.2s linear 0.1s, border-left 0.2s linear 0.15s;
+    border-radius: 1.5rem;
+    padding: 1.1rem 3.4rem;
+  }
+  .menu__loginbutton:hover {
+    border-top: 2px solid black;
+    border-right: 2px solid black;
+    border-radius: 2px solid black;
+    border-left: 2px solid black;
+    border-bottom: 2px solid black;
+    transition: border-left 0.2s linear, border-top 0.2s linear 0.05s, border-right 0.2s linear 0.1s, border-bottom 0.2s linear 0.15s;
+    transform: translateY(-0.1rem);
+    cursor: pointer;
+  }
+  .menu__loginbutton:active {
+    transform: translateY(0.1rem);
+  }
+  .menu__item:first-of-type {
+    margin-left: -2rem;
+  }
+  .arrow {
+    display: inline-block;
+  }
+  /* REMOVING ELEMENTS */
+  .navbar__button {
+    display: none;
+  }
+  .layer {
+    display: none;
+  }
+  .navbar__button {
+    display: none;
+  }
+  .menu__closebutton {
+    display: none;
+  }
+  .menu__loginbutton {
+    margin: 0 2.4rem 0 auto;
+  }
+  .menu__registerbutton {
+    padding: 1.1rem 2rem;
+    margin: 0 -4.4rem 0 1.7rem;
+  }
+  .featureslist {
+    gap: 1.8rem;
+    padding: 2.5rem 2.5rem 2.2rem;
+    pointer-events: none;
+  }
+  .featureslist .featureslist__item {
+    margin: 0;
+    transform: none;
+  }
+  .featureslist .listicons {
+    height: 1.5rem;
+    width: 1.5rem;
+    margin: 0 2rem 0 0;
+  }
+  .companylist {
+    padding: 2.5rem;
+    gap: 1.8rem;
+    left: 0;
+    opacity: 0;
+    pointer-events: none;
+  }
+  .companylist .companylist__item {
+    margin: 0;
+    transform: none;
+    max-height: fit-content;
+    opacity: 0;
+  }
+  .companylist .companylist__item--show {
+    opacity: 1;
+  }
+  .list--show {
+    opacity: 1;
+    pointer-events: all;
+  }
+  #carreers {
+    margin-right: 3.7rem;
+  }
+  /* MAIN SECTION */
+  main {
+    display: flex;
+    padding: 2.7rem 13rem 0 13rem;
+    text-align: left;
+  }
+  .main__picturediv {
+    margin-top: 0.1rem;
+    order: 1;
+  }
+  .main__image {
+    max-width: 47.95rem;
+    width: 33.33vw;
+  }
+  .main__textdiv {
+    padding: 10.4rem 0 0 3.5rem;
+    position: relative;
+  }
+  .main__heading {
+    font-size: 7.89rem;
+    width: 52rem;
+  }
+  .main__paragraph {
+    font-size: 1.8rem;
+    font-weight: 500;
+    line-height: 2.82rem;
+    margin: 4.8rem 0 5.2rem 0;
+    padding: 0 23rem 0 0;
+  }
+  .main__call-to-action {
+    font-size: 1.8rem;
+    padding: 1.9rem 3rem;
+  }
+  .footer {
+    gap: 4rem;
+    justify-content: flex-start;
+    margin: 6.5rem 0 0 0;
+  }
+  .footer__image {
+    transform: none;
+  }
+}
+@media (min-width: 800px) and (max-width: 1024px) {
+  .navbar {
+    padding: 1rem 0 0 3.5rem;
+  }
+  main {
+    padding: 0;
+  }
+  .main__image {
+    width: 40vw;
+  }
+  .main__textdiv {
+    padding: 0 0 0 3.5rem;
+  }
+  .main__heading {
+    font-size: 5.5rem;
+    width: 37rem;
+  }
+  .main__paragraph {
+    font-size: 1.6rem;
+    padding: 0 12% 0 0;
+  }
+  .footer {
+    gap: 2rem;
+  }
+}
+@media (min-width: 940px) and (max-width: 1023px) {
+  main {
+    padding-top: 2.7rem;
+  }
+  .main__paragraph {
+    padding-right: 25%;
+  }
+  .footer {
+    margin-top: 8rem;
+  }
+}
+@media (min-width: 1024px) and (max-width: 1200px) {
+  main {
+    padding: 2.7rem 5rem;
+  }
+  .main__heading {
+    font-size: 6.5rem;
+    width: 42vw;
+  }
+  .main__image {
+    width: 38vw;
+  }
+  .main__paragraph {
+    padding-right: 8rem;
+  }
+}
+@media (min-width: 1200px) and (max-width: 1400px) {
+  main {
+    padding: 2.7rem 10rem 0 10rem;
+  }
 }
 
 /*# sourceMappingURL=styles.css.map */
