@@ -573,5 +573,15 @@ a:nth-of-type(4) {
     padding: 2.7rem 10rem 0 10rem;
   }
 }
+@media (min-width: 500px) and (max-width: 650px) {
+  .navbar__menu {
+    width: 50%;
+  }
+}
+@media (min-width: 651px) and (max-width: 799px) {
+  .navbar__menu {
+    width: 40%;
+  }
+}
 
 /*# sourceMappingURL=styles.css.map */

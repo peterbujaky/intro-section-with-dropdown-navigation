@@ -657,3 +657,15 @@ main {
   }
 
 }
+
+@media (min-width: 500px) and (max-width: 650px) {
+  .navbar__menu {
+    width: 50%;
+  }
+}
+
+@media (min-width: 651px) and (max-width: 799px) {
+  .navbar__menu {
+    width: 40%;
+  }
+}
